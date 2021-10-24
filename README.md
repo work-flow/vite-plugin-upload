@@ -1,29 +1,31 @@
-**💛 You can help the author become a full-time open-source maintainer by [sponsoring him on GitHub](https://github.com/sponsors/egoist).**
+# vite-plugin-upload
 
----
+## 特性
+- 支持又拍云
 
-# my-ts-lib
-
-[![npm version](https://badgen.net/npm/v/my-ts-lib)](https://npm.im/my-ts-lib)
-
-## Using this template
-
-- Search `my-ts-lib` and replace it with your custom package name.
-- Search `egoist` and replace it with your name.
-
-Features:
-
-- Package manager [pnpm](https://pnpm.js.org/), safe and fast
-- Release with [semantic-release](https://npm.im/semantic-release)
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Test with [jest](https://jestjs.io/)
-
-## Install
+## 使用
 
 ```bash
-npm i my-ts-lib
+npm i @jomsou/vite-plugin-upload -D
 ```
 
-## License
+```js
+// vite.config.ts
+import { upyunPlugin } from '@jomsou/vite-plugin-upload'
 
-MIT &copy; [EGOIST](https://github.com/sponsors/egoist)
+export default ({ command, mode }: ConfigEnv): UserConfig => {
+  const isBuild = command === 'build';
+
+  return {
+    plugins: [
+      isBuild && upyunPlugin({
+        serviceName: 'xxx',
+        operatorName: 'xxx',
+        password: 'xxx',
+        remoteFilePath: 'xxx',                                 
+        filePath:  'xxx'                 
+      })
+    ]
+  }
+}
+```

@@ -1,1 +1,5 @@
-export const foo = 'foo'
+import upyunPlugin from './upyun'
+
+export {
+  upyunPlugin
+}
