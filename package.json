@@ -31,7 +31,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "anve-upload-upyun": "^1.0.8",
-    "qiniu": "^7.4.0"
+    "qiniu": "7.2.1",
+    "upyun": "^3.4.4"
   }
 }
