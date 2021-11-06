@@ -13,14 +13,14 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     plugins: [
       vue(),
-      // isBuild && upyunPlugin({
-      //   serviceName: process.env.jr_UPYUN_SERVICE || '',
-      //   operatorName: process.env.jr_UPYUN_OPERATOR || '',
-      //   password: process.env.jr_UPYUN_PASSWD || '',
-      //   remoteFilePath: '/huodong/2021/10/test-vite-plugins/assets',                                 
-      //   filePath: path.resolve(process.cwd(), 'dist/assets'),
-      //   openConfirm: false,                 
-      // })
+      isBuild && upyunPlugin({
+        serviceName: process.env.jr_UPYUN_SERVICE || '',
+        operatorName: process.env.jr_UPYUN_OPERATOR || '',
+        password: process.env.jr_UPYUN_PASSWD || '',
+        remoteFilePath: '/huodong/2021/10/test-vite-plugins/assets',                                 
+        filePath: path.resolve(process.cwd(), 'dist/assets'),
+        openConfirm: false,                 
+      })
       // isBuild && qiniuPlugin({
       //   accessKey: process.env.QINIU_ACCESSKEY || '',
       //   secretKey: process.env.QINIU_SECRETKEY || '',
@@ -29,14 +29,14 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       //   remoteFilePath: '/dist',
       //   // openConfirm: false,
       // })
-      isBuild && aliossPlugin({
-        accessKeyId: process.env.ALIOSS_ACCESSKEYID || '',
-        secretAccessKey: process.env.ALIOSS_SECRETACESSKEY || '',
-        endpoint: process.env.ALIOSS_ENDPOINT || '',
-        bucket: 'zeditor',
-        openConfirm: false,
-        filePath: path.resolve(__dirname, './dist')
-      })
+      // isBuild && aliossPlugin({
+      //   accessKeyId: process.env.ALIOSS_ACCESSKEYID || '',
+      //   secretAccessKey: process.env.ALIOSS_SECRETACESSKEY || '',
+      //   endpoint: process.env.ALIOSS_ENDPOINT || '',
+      //   bucket: 'zeditor',
+      //   openConfirm: false,
+      //   filePath: path.resolve(__dirname, './dist')
+      // })
     ]
   }
 }

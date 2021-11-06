@@ -1,7 +1,8 @@
 /**
  * 参考出处：https://github.com/shihao905/upload-upyun
  */
-const slog = require('single-line-log').stdout;
+import slog from "single-line-log"
+
 class ProgressBar {
   description: string
   length: number
@@ -26,7 +27,7 @@ class ProgressBar {
       empty += '░';
     }
     let cmdText = this.description + ': ' + (100 * +percent).toFixed(2) + '% ' + cell + empty + ' ' + options.completed + '/' + options.total + '\n';
-    slog(cmdText);
+    slog.stdout(cmdText);
   }
 }
 
