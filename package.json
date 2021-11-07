@@ -1,7 +1,10 @@
 {
   "name": "@jomsou/vite-plugin-upload",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "上传静态资源至又拍云，七牛云，阿里oss等的vite插件",
+  "homepage": "https://github.com/Zenquan/vite-plugin-upload#readme",
+  "author": "Zenquan",
+  "repository": "https://github.com/Zenquan/vite-plugin-upload",
   "publishConfig": {
     "access": "public"
   },
@@ -31,10 +34,6 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "aliyun-oss-upload-stream": "^1.3.0",
-    "aliyun-sdk": "^1.12.3",
-    "qiniu": "7.2.1",
-    "single-line-log": "^1.1.2",
-    "upyun": "^3.4.4"
+    "@jomsou/upload": "^1.2.0"
   }
 }
