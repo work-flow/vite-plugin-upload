@@ -1,4 +1,4 @@
-import { UpyunUpload }from '@jomsou/upload'
+import { UpyunUpload } from '@jomsou/upload'
 import type { UPYUN_OPTION_TYPE } from '@jomsou/upload'
 
 export default function upyunPlugin (

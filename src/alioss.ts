@@ -1,4 +1,4 @@
-import { AliOssUpload }from '@jomsou/upload'
+import { AliOssUpload } from '@jomsou/upload'
 import type { ALIOSS_OPTION_TYPE } from '@jomsou/upload'
 
 export default function aliossPlugin (
