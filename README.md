@@ -19,7 +19,7 @@ npm i @jomsou/vite-plugin-upload -D
 | 参数           | 说明                         | 类型     | 默认值      |
 | -------------- | ---------------------------- | -------- | ----------- |
 | remoteFilePath | 非必填，表示服务器远程路径   | string   |             |
-| filePath       | 非必填，本地文件夹路径       | string   |             |
+| filePath       | 必填，本地文件夹路径       | string   |             |
 | openConfirm    | 非必填，是否打开上传前的提示 | boolean  | true        |
 | success        | 非必填，上传成功回调         | Function | files => {} |
 | error          | 非必填，上传失败回调         | Function | files => {} |
