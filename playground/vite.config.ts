@@ -2,7 +2,6 @@ import {
   UserConfig, 
   ConfigEnv  
 } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { upyunPlugin, qiniuPlugin, aliossPlugin} from '../src/index'
 
@@ -12,7 +11,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
   return {
     plugins: [
-      vue(),
       isBuild && upyunPlugin({
         serviceName: process.env.jr_UPYUN_SERVICE || '',
         operatorName: process.env.jr_UPYUN_OPERATOR || '',
