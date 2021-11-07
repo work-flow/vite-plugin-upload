@@ -1,6 +1,7 @@
 # vite-plugin-upload
 
-这是参考了[@shihao905/upload-upyun](https://github.com/shihao905/upload-upyun)项目，实现上传静态资源至又拍云，七牛云，阿里oss等的vite插件
+这是基于[@Zenquan/upload](https://github.com/Zenquan/upload)，实现上传静态资源至又拍云，七牛云，阿里oss等的vite插件
+
 ## 特性
 - 支持又拍云
 - 支持七牛云
@@ -18,7 +19,7 @@ npm i @jomsou/vite-plugin-upload -D
 | 参数           | 说明                         | 类型     | 默认值      |
 | -------------- | ---------------------------- | -------- | ----------- |
 | remoteFilePath | 非必填，表示服务器远程路径   | string   |             |
-| filePath       | 非必填，本地文件夹路径       | string   |             |
+| filePath       | 必填，本地文件夹路径       | string   |             |
 | openConfirm    | 非必填，是否打开上传前的提示 | boolean  | true        |
 | success        | 非必填，上传成功回调         | Function | files => {} |
 | error          | 非必填，上传失败回调         | Function | files => {} |
@@ -96,3 +97,8 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 - [x] 2021.10.24 支持又拍云
 - [x] 2021.11.05 支持七牛云
 - [x] 2021.11.06 支持阿里oss
+
+## 感谢
+
+- [@shihao905/upload-upyun](https://github.com/shihao905/upload-upyun)
+- [@egoist/ts-lib-starter](https://github.com/egoist/ts-lib-starter)
