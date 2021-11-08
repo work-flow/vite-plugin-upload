@@ -1,6 +1,6 @@
 {
   "name": "@jomsou/vite-plugin-upload",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "上传静态资源至又拍云，七牛云，阿里oss等的vite插件",
   "homepage": "https://github.com/Zenquan/vite-plugin-upload#readme",
   "author": "Zenquan",
@@ -19,7 +19,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts-resolve",
+    "build": "tsup src/index.ts --format cjs,esm --dts-resolve --minify",
     "test": "jest",
     "prepublishOnly": "npm run build"
   },
@@ -34,6 +34,6 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "@jomsou/upload": "^1.3.0"
+    "@jomsou/upload": "^1.4.0"
   }
 }

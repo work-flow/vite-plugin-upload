@@ -18,6 +18,7 @@ npm i @jomsou/vite-plugin-upload -D
 
 | 参数           | 说明                         | 类型     | 默认值      |
 | -------------- | ---------------------------- | -------- | ----------- |
+| sdk          | 必填，各平台提供的sdk         | object |  |
 | remoteFilePath | 非必填，表示服务器远程路径   | string   |             |
 | filePath       | 必填，本地文件夹路径       | string   |             |
 | openConfirm    | 非必填，是否打开上传前的提示 | boolean  | true        |
@@ -29,6 +30,7 @@ npm i @jomsou/vite-plugin-upload -D
 #### 又拍云
 ```js
 // vite.config.[t|j]s
+import upyun from 'upyun'
 import { upyunPlugin } from '@jomsou/vite-plugin-upload'
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build';
@@ -36,6 +38,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     plugins: [
       isBuild && upyunPlugin({
+        sdk: upyun
         serviceName: 'xxx',
         operatorName: 'xxx',
         password: 'xxx',
@@ -51,6 +54,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 #### 七牛云
 ```js
 // vite.config.[t|j]s
+import qiniu from 'qiniu'
 import { qiniuPlugin } from '@jomsou/vite-plugin-upload'
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build';
@@ -58,6 +62,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     plugins: [
       isBuild && qiniuPlugin({
+        sdk: qiniu
         accessKey: 'xxx',
         secretKey: 'xxx',
         bucket: 'xxx',
@@ -73,6 +78,8 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 ### 阿里oss
 ```js
 // vite.config.[t|j]s
+import ALY from 'aliyun-sdk' 
+import OssUploadStream from 'aliyun-oss-upload-stream'
 import { aliossPlugin } from '@jomsou/vite-plugin-upload'
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build';
@@ -80,12 +87,14 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     plugins: [
       isBuild && aliossPlugin({
-        accessKeyId: '',
-        secretAccessKey: '',
-        endpoint: '',
-        bucket: '',
+        sdk: ALY,
+        accessKeyId: 'xxx',
+        secretAccessKey: 'xxx',
+        endpoint: 'xxx',
+        bucket: 'xxx',
         openConfirm: false,
-        filePath: ''
+        filePath: 'xxx'
+        ossUploadStream: OssUploadStream
       })         
     ]
   }
