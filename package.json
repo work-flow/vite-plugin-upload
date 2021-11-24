@@ -19,7 +19,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts-resolve --minify",
+    "build": "tsup src/index.ts --format cjs,esm --dts-resolve",
     "test": "jest",
     "prepublishOnly": "npm run build"
   },
@@ -34,6 +34,6 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "@jomsou/upload": "^1.4.0"
+    "@jomsou/upload": "1.6.0"
   }
 }
