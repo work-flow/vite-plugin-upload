@@ -11,6 +11,11 @@
 ### 安装
 ```bash
 npm i @jomsou/vite-plugin-upload -D
+
+# 选择各个平台sdk安装
+npm i upyun -D
+npm i qiniu -D
+npm i aliyun-sdk aliyun-oss-upload-stream -D
 ```
 ### 配置
 
