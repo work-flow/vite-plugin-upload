@@ -49,5 +49,5 @@ jobs:
       - name: Release
         run: pnpx -y semantic-release --branches main
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.MG }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
